@@ -20,13 +20,8 @@ class NoteDetailViewController: UIViewController {
         super.viewDidLoad()
         let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = false
-        
-        guard let note = note else {
-            fatalError("NoteDetailViewController present without note passed")
-        }
-        
-        titleField.text = note.title
-        noteField.text = note.content
+        titleField.text = note?.title
+        noteField.text = note?.content
     }
 
     func getNavigationController() -> UINavigationController {
@@ -40,13 +35,21 @@ class NoteDetailViewController: UIViewController {
         guard let title = titleField.text else {
             return
         }
-        noteAppendableDelegate.setTitleNote(title)
         guard let content = noteField.text else {
             return
         }
-        noteAppendableDelegate.setContentNote(content)
-        let navigationController = getNavigationController()
-        navigationController.popViewController(animated: true)
+        let newNote = Note(title: title, content: content)
+        
+        if note == nil {
+            noteAppendableDelegate.createNote(note: newNote)
+            let navigationController = getNavigationController()
+            navigationController.popViewController(animated: true)
+        } else {
+            noteAppendableDelegate.saveNote(title: title, content: content)
+            let navigationController = getNavigationController()
+            navigationController.popViewController(animated: true)
+        }
+        
     }
     
     

@@ -25,7 +25,14 @@ extension NotesViewController: UITableViewDelegate {
         controller.note = notes[index]
         controller.noteAppendableDelegate = self
         self.noteIndex = index
+        
         let navigationController = getNavigationController()
         navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            notes.remove(at: indexPath.row)
+        }
     }
 }

@@ -55,14 +55,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Notes" id="1Nv-bN-a1j"/>
+                    <navigationItem key="navigationItem" title="Notes" id="1Nv-bN-a1j">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NXe-UH-ArU">
+                            <connections>
+                                <action selector="createNote:" destination="BYZ-38-t0r" id="IuY-Q7-vZ5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hqT-YP-fpD" id="959-ai-k0I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1858" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lFY-Ak-015">

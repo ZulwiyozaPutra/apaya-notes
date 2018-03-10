@@ -9,7 +9,6 @@
 import Foundation
 
 protocol NoteDelegate {
-    func appendNote(note: Note)
-    func setTitleNote(_ title: String)
-    func setContentNote(_ content: String)
+    func createNote(note: Note)
+    func saveNote(title: String, content: String)
 }

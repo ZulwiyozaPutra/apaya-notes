@@ -32,10 +32,17 @@ class NotesViewController: UIViewController, NoteDelegate {
         let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func createNote(_ sender: Any) {
+        let storyboardName = "ApayaNote"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        
+        guard let controller = storyboard.instantiateInitialViewController() as? NoteDetailViewController else {
+            fatalError("Storyboard initial view controller is not found")
+        }
+        controller.noteAppendableDelegate = self
+        let navigationController = getNavigationController()
+        navigationController.pushViewController(controller, animated: true)
     }
     
     func getNavigationController() -> UINavigationController {
@@ -52,19 +59,13 @@ class NotesViewController: UIViewController, NoteDelegate {
         notes.append(anotherNote)
     }
 
-    func appendNote(note: Note) {
+    func createNote(note: Note) {
         notes.append(note)
     }
     
-    func setTitleNote(_ title: String) {
+    func saveNote(title: String, content: String) {
         var note = notes[noteIndex!]
         note.setTitle(title: title)
-        notes.remove(at: noteIndex!)
-        notes.insert(note, at: noteIndex!)
-    }
-    
-    func setContentNote(_ content: String) {
-        var note = notes[noteIndex!]
         note.setContent(content: content)
         notes.remove(at: noteIndex!)
         notes.insert(note, at: noteIndex!)
