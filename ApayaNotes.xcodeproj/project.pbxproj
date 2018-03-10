@@ -18,6 +18,7 @@
 		6E107E7920539B4C00469118 /* ApayaNote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E107E7820539B4C00469118 /* ApayaNote.storyboard */; };
 		6E5F8BC82053AFD80031E45B /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F8BC72053AFD80031E45B /* NoteDetailViewController.swift */; };
 		6E5F8BCA2053B0C70031E45B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F8BC92053B0C70031E45B /* Note.swift */; };
+		6E5F8BCC2053C1820031E45B /* NotesAppendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F8BCB2053C1820031E45B /* NotesAppendable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		6E107E7820539B4C00469118 /* ApayaNote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApayaNote.storyboard; sourceTree = "<group>"; };
 		6E5F8BC72053AFD80031E45B /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		6E5F8BC92053B0C70031E45B /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		6E5F8BCB2053C1820031E45B /* NotesAppendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppendable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				6E107E522053899300469118 /* AppDelegate.swift */,
 				6E5F8BC92053B0C70031E45B /* Note.swift */,
 				6E5F8BC72053AFD80031E45B /* NoteDetailViewController.swift */,
+				6E5F8BCB2053C1820031E45B /* NotesAppendable.swift */,
 				6E107E772053953800469118 /* NotesViewController */,
 				6E107E562053899300469118 /* Main.storyboard */,
 				6E107E7820539B4C00469118 /* ApayaNote.storyboard */,
@@ -234,6 +237,7 @@
 				6E107E552053899300469118 /* NotesViewController.swift in Sources */,
 				6E107E732053919700469118 /* NotesViewController+UITableViewDataSource.swift in Sources */,
 				6E107E532053899300469118 /* AppDelegate.swift in Sources */,
+				6E5F8BCC2053C1820031E45B /* NotesAppendable.swift in Sources */,
 				6E5F8BC82053AFD80031E45B /* NoteDetailViewController.swift in Sources */,
 				6E107E752053934400469118 /* NotesViewController+UITableViewDelegate.swift in Sources */,
 				6E5F8BCA2053B0C70031E45B /* Note.swift in Sources */,

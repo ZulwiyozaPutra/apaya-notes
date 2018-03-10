@@ -14,6 +14,7 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var noteField: UITextField!
     
     var note: Note?
+    var noteAppendableDelegate: NoteDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,18 @@ class NoteDetailViewController: UIViewController {
         return navigationController
     }
     
+    @IBAction func saveNote(_ sender: Any) {
+        guard let title = titleField.text else {
+            return
+        }
+        noteAppendableDelegate.setTitleNote(title)
+        guard let content = noteField.text else {
+            return
+        }
+        noteAppendableDelegate.setContentNote(content)
+        let navigationController = getNavigationController()
+        navigationController.popViewController(animated: true)
+    }
     
     
     

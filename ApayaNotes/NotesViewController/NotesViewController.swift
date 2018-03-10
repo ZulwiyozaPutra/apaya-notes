@@ -8,11 +8,16 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
-
+class NotesViewController: UIViewController, NoteDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var notes: [Note] = []
+    var noteIndex: Int?
+    var notes: [Note] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,7 @@ class NotesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        noteIndex = nil
         let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
     }
@@ -46,6 +52,23 @@ class NotesViewController: UIViewController {
         notes.append(anotherNote)
     }
 
+    func appendNote(note: Note) {
+        notes.append(note)
+    }
+    
+    func setTitleNote(_ title: String) {
+        var note = notes[noteIndex!]
+        note.setTitle(title: title)
+        notes.remove(at: noteIndex!)
+        notes.insert(note, at: noteIndex!)
+    }
+    
+    func setContentNote(_ content: String) {
+        var note = notes[noteIndex!]
+        note.setContent(content: content)
+        notes.remove(at: noteIndex!)
+        notes.insert(note, at: noteIndex!)
+    }
 
 }
 

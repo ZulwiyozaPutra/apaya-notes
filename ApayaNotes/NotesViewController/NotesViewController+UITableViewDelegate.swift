@@ -21,8 +21,10 @@ extension NotesViewController: UITableViewDelegate {
         guard let controller = storyboard.instantiateInitialViewController() as? NoteDetailViewController else {
             fatalError("Storyboard initial view controller is not found")
         }
+        
         controller.note = notes[index]
-
+        controller.noteAppendableDelegate = self
+        self.noteIndex = index
         let navigationController = getNavigationController()
         navigationController.pushViewController(controller, animated: true)
     }
