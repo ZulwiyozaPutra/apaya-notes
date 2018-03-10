@@ -14,15 +14,20 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let navigationController = self.navigationController else {
-            fatalError("Navigation controlles is not found")
-        }
+        let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getNavigationController() -> UINavigationController {
+        guard let navigationController = self.navigationController else {
+            fatalError("Navigation controlles is not found")
+        }
+        return navigationController
     }
 
 

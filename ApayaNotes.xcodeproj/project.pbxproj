@@ -15,6 +15,7 @@
 		6E107E682053899300469118 /* ApayaNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E107E672053899300469118 /* ApayaNotesTests.swift */; };
 		6E107E732053919700469118 /* NotesViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E107E722053919700469118 /* NotesViewController+UITableViewDataSource.swift */; };
 		6E107E752053934400469118 /* NotesViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E107E742053934400469118 /* NotesViewController+UITableViewDelegate.swift */; };
+		6E107E7920539B4C00469118 /* ApayaNote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E107E7820539B4C00469118 /* ApayaNote.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		6E107E692053899300469118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E107E722053919700469118 /* NotesViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		6E107E742053934400469118 /* NotesViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		6E107E7820539B4C00469118 /* ApayaNote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApayaNote.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				6E107E522053899300469118 /* AppDelegate.swift */,
 				6E107E772053953800469118 /* NotesViewController */,
 				6E107E562053899300469118 /* Main.storyboard */,
+				6E107E7820539B4C00469118 /* ApayaNote.storyboard */,
 				6E107E76205394D400469118 /* SupportingFiles */,
 			);
 			path = ApayaNotes;
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E107E5D2053899300469118 /* LaunchScreen.storyboard in Resources */,
+				6E107E7920539B4C00469118 /* ApayaNote.storyboard in Resources */,
 				6E107E5A2053899300469118 /* Assets.xcassets in Resources */,
 				6E107E582053899300469118 /* Main.storyboard in Resources */,
 			);
