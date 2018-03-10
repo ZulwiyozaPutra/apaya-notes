@@ -43,15 +43,12 @@ struct Note {
             return nil
         }
         
+        self.init(title: title, content: content)
+        self.id = id
+        self.created = created
+        
         if let modified = data["modifed"] as? String {
-            self.init(title: title, content: content)
-            self.id = id
-            self.created = created
             self.modified = modified
-        } else {
-            self.init(title: title, content: content)
-            self.id = id
-            self.created = created
         }
     }
     

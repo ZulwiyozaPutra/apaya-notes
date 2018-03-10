@@ -27,9 +27,7 @@ extension NotesViewController: UITableViewDataSource {
         }
         
         let index = indexPath.row
-        
         let note = notes[index]
-
         label.text = note.title
         return cell
     }
