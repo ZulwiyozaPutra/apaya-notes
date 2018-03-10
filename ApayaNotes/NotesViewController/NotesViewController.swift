@@ -12,10 +12,13 @@ class NotesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var notes: [Note] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
+        createNotes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +31,13 @@ class NotesViewController: UIViewController {
             fatalError("Navigation controlles is not found")
         }
         return navigationController
+    }
+    
+    func createNotes() {
+        let note = Note(title: "New Title", content: "This is the content")
+        let anotherNote = Note(title: "Another Title", content: "This is the another content")
+        notes.append(note)
+        notes.append(anotherNote)
     }
 
 

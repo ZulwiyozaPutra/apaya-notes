@@ -13,9 +13,14 @@ class NoteDetailViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var noteField: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+    
     
     
 }

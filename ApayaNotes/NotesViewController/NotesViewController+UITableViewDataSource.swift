@@ -11,7 +11,7 @@ import UIKit
 extension NotesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -26,7 +26,11 @@ extension NotesViewController: UITableViewDataSource {
             fatalError("Label in cell is not found. Please check the identifier in storyboard")
         }
         
-        label.text = "Test Title"
+        let index = indexPath.row
+        
+        let note = notes[index]
+
+        label.text = note.title
         return cell
     }
 }
