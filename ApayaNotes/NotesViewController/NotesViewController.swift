@@ -24,6 +24,16 @@ class NotesViewController: UIViewController, NoteDelegate {
         let navigationController = getNavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         createNotes()
+        fetchFromAPI { (data: [String: Any]) in
+            print(data)
+            let status = data["status"] as? Int
+            let message = data["message"] as? [String: Any]
+            let title = message!["title"] as? String
+            let note = Note(title: String(describing: status!), content: title!)
+            DispatchQueue.main.async {
+                self.notes.append(note)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +79,20 @@ class NotesViewController: UIViewController, NoteDelegate {
         note.setContent(content: content)
         notes.remove(at: noteIndex!)
         notes.insert(note, at: noteIndex!)
+    }
+    
+    func fetchFromAPI(completionHandler: @escaping (_ data: [String: Any]) -> ()) {
+        let url = URL(string: "http://localhost:8000/auth/")
+        let task = URLSession.shared.dataTask(with: url!) { (data: Data?, response: URLResponse?, error: Error?) in
+            
+            guard let data = data else {
+                return
+            }
+            let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            
+            completionHandler(json!)
+        }
+        task.resume()
     }
 
 }
