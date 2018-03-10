@@ -11,17 +11,18 @@ import UIKit
 extension NotesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let index = indexPath.row
         let storyboardName = "ApayaNote"
         
         // TODO: Unwrap
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         
         
-        guard let controller = storyboard.instantiateInitialViewController() else {
+        guard let controller = storyboard.instantiateInitialViewController() as? NoteDetailViewController else {
             fatalError("Storyboard initial view controller is not found")
         }
-        
+        controller.note = notes[index]
+
         let navigationController = getNavigationController()
         navigationController.pushViewController(controller, animated: true)
     }

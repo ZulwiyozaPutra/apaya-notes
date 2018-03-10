@@ -20,6 +20,12 @@ class NotesViewController: UIViewController {
         navigationController.navigationBar.prefersLargeTitles = true
         createNotes()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        let navigationController = getNavigationController()
+        navigationController.navigationBar.prefersLargeTitles = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

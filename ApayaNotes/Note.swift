@@ -26,6 +26,14 @@ struct Note {
     }
     
     init?(data: [String: Any?]) {
+        guard
+            let title = data["title"] as? String,
+            let content = data["content"] as? String else {
+            return nil
+        }
+        
+        self.init(title: title, content: content)
+        
         guard let id = data["id"] as? String else {
             return nil
         }
@@ -34,16 +42,6 @@ struct Note {
             return nil
         }
         
-        
-        guard let title = data["title"] as? String else {
-            return nil
-        }
-        
-        guard let content = data["content"] as? String else {
-            return nil
-        }
-        
-        self.init(title: title, content: content)
         self.id = id
         self.created = created
         
